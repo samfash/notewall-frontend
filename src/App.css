@@ -1,38 +1,107 @@
-.App {
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(236, 235, 235);
+background-image: url("./assets/images/wall-4-light.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.app-heading{
+  background-color: #ffba39 ;
+  padding: 0.3rem 2.5rem;
+  font-family: "Playfair Display", serif;
+  font-size: large;
+  color: #fff;
+}
+.app-heading a{
+  text-decoration: none; /* Remove underline */
+  color: inherit;
+
+}
+.container{
+  margin: 15% auto;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form{
+  max-width: 90%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-container{
+  max-width: 450px;
+  margin: 1rem auto;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-family: "Montserrat", serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.input-form{
+  margin: 1rem 1rem;
+  background-color: white;
+  padding: 1rem 0 1.2rem 1rem;
+  border-radius: 2%;
+  box-shadow: 0px 0px 3px 0px;
+  line-height: 1.5;
+  height: max-content;
+}
+.input-title, .input-content{
+  width: 95%;
+  padding-top: 0.2rem;
+  border-color: transparent;
+  font-size: 1.2em;
+}
+button.input-button{
+  position: absolute;
+  right: 20px;
+  bottom: 2px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  background-color: #ffba39 ;
   color: white;
+  border-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+.note-cover{
+  border-radius: 4%;
+  box-shadow: 2px 2px rgb(211, 205, 205);
+  line-height: 1.5;
+  width: 300px;
+  height: 180px;
+  background-color: white;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  position: relative;
+}
+.note-group{
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  max-width: 95%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-title, .app-content{
+  font-size: normal;
+  font-family: "Sedan", serif;
+  margin: 1rem 1.5rem 1rem 1rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.delete-button{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color:  #ffba39;
+  background-color: transparent;
+  border-color: transparent;
+  font-weight: 600;
+}
+.footer{
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  position: fixed;
 }
