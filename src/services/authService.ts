@@ -2,19 +2,25 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:5000/api/auth';
 
-interface FormData {
+interface MailData {
+  username: string;
+  email: string;
+  password: string;
+}
+
+interface LogData {
   username: string;
   password: string;
 }
 
-export const register = async (formData:FormData ) => {
+export const register = async (formData:MailData ) => {
   console.log(formData)
   const responce = await axios.post(`${API_URL}/register`, formData);
   console.log(responce)
   return responce.data
 };
 
-export const login = async (formData:FormData) => {
+export const login = async (formData:LogData) => {
   const response = await axios.post(`${API_URL}/login`, formData);
   if (response.data.token) {
     localStorage.setItem('token', response.data.token);

@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../services/authService';
+import '../assets/css/register.css'
+import profile from "../assets/images/bit-profile.png"
 
 interface FormData {
   username: string;
+  email: string;
   password: string;
 }
 
 const Register: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({ username: '', password: '' });
+  const [formData, setFormData] = useState<FormData>({ username: '',email: '', password: '' });
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -31,33 +34,56 @@ const Register: React.FC = () => {
 
   return (
     <div className='container'>
-      <h1>Register</h1>
-      <form className='form' onSubmit={handleSubmit}>
-        <div>
-          <label>Email</label>
-          <input
-          id="username"
-            name='username'
-            type="email"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
+       <div className="left-section">
+            <div className="branding">
+                <img src={profile} alt="Brand Logo" className="logo"/>
+                <h1>FashRock Web</h1>
+                <p>Redefining the Internet through our Web Apps.</p>
+            </div>
         </div>
-        <div>
-          <label>Password</label>
-          <input
-            id='password'
-            name='password'
-            type="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        {error && <p>{error}</p>}
-        <button type="submit">Register</button>
-      </form>
+        <div className="right-section">
+          <h2>Create Account</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label >Name</label>
+                <input  
+                  id="username"
+                  name="username" 
+                  type="text"
+                  placeholder="Enter your username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  required
+                  />
+              </div>
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  id="email"
+                  name='email'
+                  type="email"
+                  placeholder="Your email goes here"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Password</label>
+                <input
+                  id='password'
+                  name='password'
+                  type="password"
+                  placeholder="*****************"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              {error && <p>{error}</p>}
+              <button type="submit">Register</button>
+            </form>
+          </div>
     </div>
   );
 };

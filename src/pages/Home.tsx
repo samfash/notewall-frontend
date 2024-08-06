@@ -4,6 +4,7 @@ import NoteList from '../components/NoteList';
 import { getNotes, createNote, deleteNote } from '../services/noteService';
 import {logout} from '../services/authService'
 import { useNavigate } from 'react-router-dom';
+import '../assets/css/home.css'
 
 
 interface NoteData {
@@ -40,7 +41,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className='home-back'>
       <button type='button' onClick={handleLogout}>Logout</button>
       <NoteForm onSubmit={handleAddNote} />
       <NoteList notes={notes} onDelete={handleDeleteNote} />

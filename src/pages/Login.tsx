@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../services/authService';
+import "../assets/css/login.css"
 
 interface FormData {
   username: string;
@@ -28,26 +29,29 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className='container'>
-      <h1>Login</h1>
-      <form className='form' onSubmit={handleSubmit}>
-        <div>
+    <div className='containerLog'>
+      <div className='card'>
+      <h2 className='log-head'>Log in</h2>
+      <form onSubmit={handleSubmit}>
+        <div className='form-group'>
           <label>Email</label>
           <input
             id='username'
             name='username'
-            type="email"
+            type="text"
+            placeholder='username or email'
             value={formData.username}
             onChange={handleChange}
             required
           />
         </div>
-        <div>
+        <div className='form-group'>
           <label>Password</label>
           <input
             id='password'
             name='password'
             type="password"
+            placeholder="*****************"
             value={formData.password}
             onChange={handleChange}
             required
@@ -56,6 +60,7 @@ const Login: React.FC = () => {
         {error && <p>{error}</p>}
         <button type="submit">Login</button>
       </form>
+      </div>
     </div>
   );
 };
