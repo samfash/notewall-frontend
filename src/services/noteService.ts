@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://notewall-webapp.onrender.com/api/notes';
+const API_URL = `${process.env.REACT_API_URL}/notes`;
 
 export const getNotes = async () => {
   const token = localStorage.getItem('token');
