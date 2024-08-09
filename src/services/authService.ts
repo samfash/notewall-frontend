@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-const API_URL = `${process.env.REACT_API_URL}/auth` || 'https://notewall-webapp.onrender.com/api/auth';
+// 
+const API_URL = process.env.REACT_USER_API_URL || 'https://notewall-webapp.onrender.com/api/auth';
 
 interface MailData {
   username: string;
