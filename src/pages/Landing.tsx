@@ -6,8 +6,8 @@ const Landing: React.FC = () => {
   return (
     <div className='main body-landing'>
       <div className="hero">
-          <h1>Welcome to NoteWall</h1>
-          <p>Your personal note-taking app to keep your thoughts organized and accessible anywhere.</p>
+          <h1>Welcome to Message Board</h1>
+          <p>Your group note leaving board, like a shared todo list and accessible anywhere.</p>
           <div className="cta-buttons">
             <Link to="/login" className='btn'>Login</Link>
             <Link to="/register" className='btn'>Register</Link>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function Header(){
     return <header className="app-heading no-highlight">
     <h1>
-    <Link to="/">NoteWall</Link>
+    <Link to="/">Message Board</Link>
     </h1>
     </header>
 }
